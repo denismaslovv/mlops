@@ -9,5 +9,5 @@
 | № | Задание | Описание | Выполнено |
 | --- | --- | --- | --- |
 | 1 | Python Project Setup | Инициализация проекта с uv, Ruff и ty. | ☑  |
-| 2 | Git Branching | Работа с ветками и Pull Request по Gitflow. | ☐  |
+| 2 | Git Branching | Работа с ветками и Pull Request по Gitflow. | ☑  |
 |  3|  |  | ☐  |
