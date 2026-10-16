@@ -1,3 +1,2 @@
-def calculate(x,y):
-
-    return x+y
+def calculate(x: int, y: int) -> int:
+    return x + y
