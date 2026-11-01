@@ -1,0 +1,46 @@
+schema: '2.0'
+stages:
+  generate_data:
+    cmd: uv run python src/mlops/generate_data.py
+    deps:
+    - path: src/mlops/generate_data.py
+      hash: md5
+      md5: d3b68550a42bdb1abca0ce5c0ce424a4
+      size: 632
+    outs:
+    - path: data/substances.csv
+      hash: md5
+      md5: 0fb6f93089d66d376016e696b456bd19
+      size: 112
+  calculate:
+    cmd: uv run python src/mlops/calculate.py
+    deps:
+    - path: data/substances.csv
+      hash: md5
+      md5: 0fb6f93089d66d376016e696b456bd19
+      size: 112
+    - path: src/mlops/calculate.py
+      hash: md5
+      md5: 7bdc7c3881f02bd3a13662e4299ef090
+      size: 913
+    outs:
+    - path: data/results.csv
+      hash: md5
+      md5: 9314f5fade674efe7966132de7cc9339
+      size: 62
+  summarize:
+    cmd: uv run python src/mlops/summarize.py
+    deps:
+    - path: data/results.csv
+      hash: md5
+      md5: 9314f5fade674efe7966132de7cc9339
+      size: 62
+    - path: src/mlops/summarize.py
+      hash: md5
+      md5: ec82265610652a2ce199c960ae13f188
+      size: 667
+    outs:
+    - path: reports/summary.json
+      hash: md5
+      md5: f4ad69b53ab2a91f8d91c657d40d7d8b
+      size: 59
