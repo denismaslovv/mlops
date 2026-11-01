@@ -1,0 +1,21 @@
+stages:
+  generate_data:
+    cmd: uv run python src/mlops/generate_data.py
+    deps:
+    - src/mlops/generate_data.py
+    outs:
+    - data/substances.csv
+  calculate:
+    cmd: uv run python src/mlops/calculate.py
+    deps:
+    - data/substances.csv
+    - src/mlops/calculate.py
+    outs:
+    - data/results.csv
+  summarize:
+    cmd: uv run python src/mlops/summarize.py
+    deps:
+    - data/results.csv
+    - src/mlops/summarize.py
+    metrics:
+    - reports/summary.json

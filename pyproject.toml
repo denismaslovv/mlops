@@ -22,5 +22,6 @@ build-backend = "uv_build" #### dfdfdfdfdf
 
 [dependency-groups]
 dev = [
+    "dvc>=3.67.1",
     "ipykernel>=7.4.0",
 ]
